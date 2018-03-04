@@ -1,0 +1,34 @@
+package com.company;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Year;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
+
+import static javax.print.attribute.standard.MediaPrintableArea.MM;
+
+public class Main {
+
+
+    public static void main(String[] args) {
+
+        Calendar calendar = Calendar.getInstance();
+
+
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+        Date firstDayOfMonth = calendar.getTime();
+
+        calendar.add(Calendar.MONTH, 1);
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+        calendar.add(Calendar.DATE, -1);
+
+        Date lastDayOfMonth = calendar.getTime();
+
+        DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        System.out.println("First Day Of Month:" + sdf.format(firstDayOfMonth));
+        System.out.println("Last Day of Month: " + sdf.format(lastDayOfMonth));
+
+    }
+}
